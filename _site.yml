@@ -1,0 +1,16 @@
+name: "Yay internet!"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "About"
+      href: about.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<xy2476@columbia.edu>
+    - icon: fa-github fa-lg
+      href: http://github.com/rioyxw/
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/xinwen-yan-8a804415a/
+output:
+  html_document:
+    theme: cerulean
