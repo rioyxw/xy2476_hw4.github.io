@@ -1,0 +1,13 @@
+---
+title: "My awesome website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+# This is Rio's awesome website
+
+![](https://media.giphy.com/media/ASd0Ukj0y3qMM/giphy.gif)
+Hi!
