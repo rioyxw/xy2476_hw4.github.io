@@ -13,4 +13,4 @@ navbar:
       href: https://www.linkedin.com/in/xinwen-yan-8a804415a/
 output:
   html_document:
-    theme: cerulean
+    theme: darkly
