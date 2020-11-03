@@ -28,7 +28,7 @@ instacart =
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Chart A: Number of orders for each department
 
 ```{r}
 instacart_count =
@@ -52,7 +52,7 @@ instacart %>%
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Chart B: Order hour of the day for each deapartment
 
 ```{r}
 x = list(
@@ -67,10 +67,9 @@ instacart %>%
   plot_ly(x = ~order_hour_of_day, y = ~department, 
           color = ~department, type = "box", colors = "viridis") %>% 
   layout(xaxis = x)
-
 ```
 
-### Chart C
+### Chart C: Top 15 best selling products
 
 ```{r}
 x = list(
