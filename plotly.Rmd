@@ -23,8 +23,7 @@ instacart =
   select(order_id, reordered, order_dow, order_hour_of_day, product_name, aisle_id,  aisle, department) %>% 
   filter(
     order_id %in% 1000:20000
-    #reordered == "0"
-  )
+  ) 
 ```
 
 
@@ -41,7 +40,7 @@ instacart =
   left_join(instacart, instacart_count)
 
 y = list(
-  title = "number of order"
+  title = "number of orders"
 )
 
 instacart %>% 
@@ -52,8 +51,22 @@ instacart %>%
 ```
 
 
-## lineplot
-boxplot for department sell each day
+## boxplot
+boxplot for department sells for each day's order hour
+
+```{r}
+instacart %>% 
+  filter(
+    !(department == "missing" | department == "other")) %>% 
+  mutate(
+    department = reorder(department, order_hour_of_day)) %>% 
+  plot_ly(x = ~order_hour_of_day, y = ~department, 
+          color = ~department, type = "box", colors = "viridis")
+
+```
+
+
+## histogram
 
 ```{r}
 
