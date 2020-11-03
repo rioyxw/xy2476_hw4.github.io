@@ -1,16 +1,61 @@
 ---
-title: "My awesome website"
+title: "Plotly examples"
 output: 
   html_document:
     toc: true
     toc_float: true
 ---
 
-# This is Rio's awesome website
-
-![](https://media.giphy.com/media/ASd0Ukj0y3qMM/giphy.gif)
+# examples of plotly on dataset instacart
 
 
-## Link to page within the site
+```{r}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+```
 
-[About me](about.html)
+```{r}
+data("instacart")
+
+instacart = 
+  instacart %>% 
+  select(order_id, reordered, order_dow, order_hour_of_day, product_name, aisle_id,  aisle, department) %>% 
+  filter(
+    order_id %in% 1000:20000
+    #reordered == "0"
+  )
+```
+
+
+# Plotly plots for instacart
+
+## scatterplot
+
+```{r}
+instacart_count =
+  instacart %>% 
+  count(aisle)
+
+instacart = 
+  left_join(instacart, instacart_count)
+
+y = list(
+  title = "number of order"
+)
+
+instacart %>% 
+  plot_ly(x = ~department, y = ~n, alpha = 0.5,
+          color = ~n,
+          type = "scatter", mode = "markers") %>% 
+  layout(yaxis = y)
+```
+
+
+## lineplot
+boxplot for department sell each day
+
+```{r}
+
+```
+
