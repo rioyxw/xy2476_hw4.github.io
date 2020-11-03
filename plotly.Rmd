@@ -55,13 +55,18 @@ instacart %>%
 boxplot for department sells for each day's order hour
 
 ```{r}
+x = list(
+  title = "order hour of the day"
+)
+
 instacart %>% 
   filter(
     !(department == "missing" | department == "other")) %>% 
   mutate(
     department = reorder(department, order_hour_of_day)) %>% 
   plot_ly(x = ~order_hour_of_day, y = ~department, 
-          color = ~department, type = "box", colors = "viridis")
+          color = ~department, type = "box", colors = "viridis") %>% 
+  layout(xaxis = x)
 
 ```
 
@@ -69,6 +74,22 @@ instacart %>%
 ## histogram
 
 ```{r}
+x = list(
+  title = "product name"
+)
+y = list(
+  title = "number of order"
+)
 
+instacart %>% 
+  count(product_name) %>% 
+  arrange(desc(n)) %>% 
+  slice(1:15) %>% 
+  mutate(
+    product_name = reorder(product_name, n)) %>% 
+  plot_ly(x = ~product_name, y = ~n, color = ~product_name,
+          type = "bar", colors = "viridis") %>% 
+  layout(xaxis = x, yaxis = y)
+  
 ```
 
