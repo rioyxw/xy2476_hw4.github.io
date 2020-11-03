@@ -1,18 +1,17 @@
 ---
-title: "Plotly examples"
+title: "Dashboard"
 output: 
-  html_document:
-    toc: true
-    toc_float: true
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed
 ---
 
-# examples of plotly on dataset instacart
-
-
-```{r}
+```{r setup, include=FALSE}
 library(tidyverse)
 library(p8105.datasets)
 library(plotly)
+library(flexdashboard)
 ```
 
 ```{r}
@@ -26,10 +25,10 @@ instacart =
   ) 
 ```
 
+Column {data-width=650}
+-----------------------------------------------------------------------
 
-# Plotly plots for instacart
-
-## scatterplot
+### Chart A
 
 ```{r}
 instacart_count =
@@ -50,9 +49,10 @@ instacart %>%
   layout(yaxis = y)
 ```
 
+Column {data-width=350}
+-----------------------------------------------------------------------
 
-## boxplot
-boxplot for department sells for each day's order hour
+### Chart B
 
 ```{r}
 x = list(
@@ -70,8 +70,7 @@ instacart %>%
 
 ```
 
-
-## histogram
+### Chart C
 
 ```{r}
 x = list(
