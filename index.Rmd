@@ -1,12 +1,12 @@
 ---
-title: "My awesome website"
+title: "My website"
 output: 
   html_document:
     toc: true
     toc_float: true
 ---
 
-## This is Rio's website for p8105 homework 4
+## This is my website for p8105 homework 4
 
 ![](https://media.giphy.com/media/ASd0Ukj0y3qMM/giphy.gif)
 

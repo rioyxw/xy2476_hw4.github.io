@@ -8,7 +8,7 @@ output:
 
 ## This page has information about me
 
-My name is Rio and I'm a first year MS student in the Biostatistics department. This is a website that I created for my Data Science course Homework 4. Thank you for stopping by.
+My name is Rio and I'm a first year MS student in the Biostatistics department. 
 
 
 ## Here is a copy of my resume:
