@@ -44,8 +44,9 @@ y = list(
 )
 
 instacart %>% 
+  mutate(text_label = str_c("Department: ", department, "\nAisle: ", aisle, "\nNumber of orders: ", n)) %>% 
   plot_ly(x = ~department, y = ~n, alpha = 0.5,
-          color = ~n,
+          color = ~n, text = ~text_label,
           type = "scatter", mode = "markers") %>% 
   layout(yaxis = y)
 ```

@@ -28,7 +28,7 @@ instacart =
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A: Number of orders for each department
+### Chart A: Number of orders for each department under each aisle
 
 ```{r}
 instacart_count =
@@ -43,8 +43,9 @@ y = list(
 )
 
 instacart %>% 
+  mutate(text_label = str_c("Department: ", department, "\nAisle: ", aisle, "\nNumber of orders: ", n)) %>% 
   plot_ly(x = ~department, y = ~n, alpha = 0.5,
-          color = ~n,
+          color = ~n, text = ~text_label,
           type = "scatter", mode = "markers") %>% 
   layout(yaxis = y)
 ```
