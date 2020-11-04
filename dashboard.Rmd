@@ -53,7 +53,7 @@ instacart %>%
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B: Order hour of the day for each deapartment
+### Chart B: Order hour of the day distribution for each deapartment
 
 ```{r}
 x = list(
@@ -65,7 +65,7 @@ instacart %>%
     !(department == "missing" | department == "other")) %>% 
   mutate(
     department = reorder(department, order_hour_of_day)) %>% 
-  plot_ly(x = ~order_hour_of_day, y = ~department, 
+  plot_ly(x = ~order_hour_of_day, y = ~department,
           color = ~department, type = "box", colors = "viridis") %>% 
   layout(xaxis = x)
 ```
@@ -74,8 +74,10 @@ instacart %>%
 
 ```{r}
 x = list(
-  title = "product name"
+  title = "product name",
+  tickangle = 20
 )
+
 y = list(
   title = "number of order"
 )
