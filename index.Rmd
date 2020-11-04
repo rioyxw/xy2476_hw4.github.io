@@ -6,12 +6,12 @@ output:
     toc_float: true
 ---
 
-# This is Rio's awesome website
+## This is Rio's website for p8105 homework 4
 
 ![](https://media.giphy.com/media/ASd0Ukj0y3qMM/giphy.gif)
 
 
-## Link to page within the site
+### Link to page within the site
 
 [About me](about.html)
 
